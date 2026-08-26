@@ -1,0 +1,7 @@
+Description:
+
+Analyzed a multi-country dataset of over 50,000 time-series records in Python to evaluate the relationship between government stringency measures, socioeconomic indicators (HDI, GDP per capita), and COVID-19 spread metrics (total cases and deaths).
+
+Extracted and audited the raw data using Pandas, performing a comprehensive missing-value analysis that identified and isolated 6,202 unrecorded entries in the Human Development Index column while verifying completeness across epidemiological variables. 
+
+Visualized feature distributions and statistical variances using Matplotlib and Seaborn across 6 core metrics, establishing a clean data pipeline for downstream modeling and correlation analysis.
