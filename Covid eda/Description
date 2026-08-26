@@ -1,0 +1,2 @@
+Description:
+Engineered an end-to-end data ingestion and preprocessing pipeline in Python (Pandas, Matplotlib, Seaborn) to analyze 50,000+ multi-country time-series records, evaluating how government stringency measures and socioeconomic factors (HDI, GDP per capita) impact COVID-19 spread.
