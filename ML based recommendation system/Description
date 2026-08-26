@@ -1,0 +1,17 @@
+Description:
+Problem Statement (Engineering Perspective)
+
+Building a content-based recommendation system over dense text datasets (e.g., user reviews and business metadata) faces key computational and architectural bottlenecks:
+
+* High Space Complexity: Pairwise cosine similarity calculations require storing an N x N matrix. For large business catalogs, this rapidly leads to Out-Of-Memory (OOM) errors during matrix multiplication.
+* Feature Sparsity and Noise: Unstructured text contains stop words, punctuation, and varying length distributions, which dilute tf-idf vector weights if left uncleaned.
+* Latency in Inference: Linear sorting across high-dimensional vector spaces introduces processing overhead, requiring optimal candidate sampling before computing similarity scores.
+
+What the Code Implemented
+
+* Data Inspection and Cleaning: Uses merged_df.describe() to evaluate numeric distributions, then cleans text by stripping non-alphabetic characters and normalizing text to lower case using clean_text.
+* Text Profiling: Aggregates all user reviews per business_id, merges them back with categorical metadata, and generates a unified text feature representation using combined_features.
+* Memory Optimization: Selects the top 5,000 businesses by review count to constrain the cosine matrix to a manageable 5000 x 5000 footprint.
+* Vectorization: Transforms cleaned text into a sparse feature space using TfidfVectorizer, constrained to 5,000 top features with English stop-word filtering.
+* Similarity Computation: Calculates dense pairwise cosine similarity scores using cosine_similarity(tfidf_matrix, tfidf_matrix).
+* Inference Engine: Defines get_recommendations() to look up a target business index, sort its similarity vector in descending order, and return the top 5 most similar businesses alongside their metadata (categories, stars, city).
