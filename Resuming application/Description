@@ -1,0 +1,20 @@
+Description:
+Problem Statement
+
+In manual hiring processes, screening large volumes of candidate resumes across diverse domains is time-consuming, subjective, and prone to human error. Unstructured text data, non-standard formats, and variations in language make it difficult for automated systems to accurately classify resumes into their appropriate professional categories.
+
+To solve this, the implemented solution builds an automated resume classification pipeline using Natural Language Processing (NLP) and Machine Learning techniques. The pipeline processes raw resume text, cleans noisy data, extracts key TF-IDF features, and accurately assigns each resume to its target domain category.
+
+Implementation Breakdown
+
+Data Preprocessing and Text Cleaning: A custom function uses regular expressions and NLTK to strip noise from raw resume text, including URLs, email tags, special characters, non-ASCII symbols, hashtags, and excess whitespace, before converting all text to lowercase.
+
+Target Label Encoding: Uses LabelEncoder from scikit-learn to map categorical target labels into numerical values so the machine learning model can process them.
+
+Feature Extraction: Converts the cleaned resume text into numerical matrix representations using TfidfVectorizer, configured with sublinear term frequency, English stop-word removal, and a maximum feature limit of 1,500 words.
+
+Dataset Splitting: Splitting the vectorized features into training and testing sets using an 80/20 ratio with stratified sampling to preserve the target class distribution across both sets.
+
+Model Training and Evaluation: Fits a OneVsRestClassifier wrapping a KNeighborsClassifier to handle multi-class categorization, then generates model predictions and outputs performance metrics using accuracy scores and classification reports.
+
+Data Visualization: Uses Seaborn and Matplotlib to construct horizontal bar charts showing the distribution of resume categories across the dataset.
