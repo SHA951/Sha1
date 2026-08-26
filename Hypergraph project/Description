@@ -1,0 +1,10 @@
+Dual-Channel Hypergraph Neural Network for Herb-Disease Association
+1. High dimensional Feature Pipeline: Enginereed automated data cleaning and pre-processing pipelines to extract 2048-bit Morgan Fingerprints from SMILES molecular strings, constructing pairwise Dice similarity matrices to encode complex biological entity relationships.
+
+2.Dimensionality Reduction & Embeddings: Implemented deep autoencoder architectures in TensorFlow/Keras to compress high-dimensional similarity spaces into 64-dimensional latent representations, achieving low reconstruction error ($MSE = 0.0412$) while preserving critical structural feature variance.
+
+3.Hypergraph Model Architecture: Designed and deployed a PyTorch dual-channel Hypergraph Convolutional Network (HGCN) incorporating self-gating mechanisms, matrix factorization, and skip connections to capture complex multi-component, multi-target interactions across heterogeneous graphs.  
+
+4.Model Validation & Evaluation: Conducted robust 5-fold cross-validation and benchmarking against baseline models (KNN), evaluating performance with metrics including AUROC, AUPRC, F1-score, precision-recall curves, and confusion matrices.  
+
+5.Impact & Predictive Analytics: Improved prediction stability and overall accuracy to 83.4% with a mean AUROC of 0.9160 and AUPRC of 0.9111, delivering scalable, actionable probability scoring for real-world candidate drug discovery and therapeutic validation
